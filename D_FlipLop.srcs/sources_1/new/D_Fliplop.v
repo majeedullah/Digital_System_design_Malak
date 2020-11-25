@@ -20,7 +20,19 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module D_Fliplop(
 
-    );
+    
+    
+    
+module D_fliplopfile(clk, reset, D, Q);
+parameter N = 16; // coeffient wordlength
+input clk, reset;
+input [N-1:0] D;
+output  reg [N-1:0] Q;
+always@(posedge clk, posedge reset)
+ if (reset)
+ Q <= 0;
+ else
+ Q <= D;
+
 endmodule
